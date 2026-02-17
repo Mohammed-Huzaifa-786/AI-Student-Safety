@@ -6,7 +6,7 @@ import { Platform } from 'react-native';
 
 // Resolve backend host dynamically in dev so physical devices can reach the machine.
 // Priority: debuggerHost (Expo) -> fallback hardcoded LAN IP.
-let host = "10.144.157.199"; // fallback — update if needed
+let host = "172.31.198.199"; // fallback — update if needed
 try {
   const manifest = Constants.manifest || Constants.expoConfig || {};
   const debuggerHost = manifest.debuggerHost || (manifest.extra && manifest.extra.host) || null;
@@ -24,7 +24,7 @@ try {
   }
 } catch (e) {}
 
-const API_BASE = `http://10.144.157.199:5000/api`;
+const API_BASE = `http://172.31.198.199:5000/api`;
 console.log('API_BASE resolved to', API_BASE);
 
 const API = axios.create({
